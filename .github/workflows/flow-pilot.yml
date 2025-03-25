@@ -1,0 +1,13 @@
+name: flow-pilot
+
+on:
+  pull_request:
+    branches: [develop]
+
+jobs:
+  flow:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: TDesignOteam/flow-pilot-action@develop
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
