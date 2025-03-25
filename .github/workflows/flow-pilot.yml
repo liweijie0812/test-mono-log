@@ -2,7 +2,7 @@ name: flow-pilot
 
 on:
   pull_request:
-    branches: [develop]
+    branches: [main]
 
 jobs:
   flow:
