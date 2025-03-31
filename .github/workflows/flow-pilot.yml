@@ -12,3 +12,4 @@ jobs:
       - uses: TDesignOteam/flow-pilot-action@develop
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+          packages: "pkg-a,pkg-b,pkg-c"
