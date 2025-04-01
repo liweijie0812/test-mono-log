@@ -1,1 +1,3 @@
 # test-mono-log
+
+test
