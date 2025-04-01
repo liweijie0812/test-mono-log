@@ -1,0 +1,17 @@
+name: flow-pilot
+
+on:
+  pull_request:
+    branches: [main]
+    types: [opened, edited]
+  issue_comment:
+    types: [edited]  
+
+jobs:
+  flow:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: TDesignOteam/flow-pilot-action@develop
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          packages: "pkg-a,pkg-b,pkg-c"
