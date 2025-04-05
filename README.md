@@ -1,3 +1,3 @@
 # test-mono-log
 
-test1234
+test
