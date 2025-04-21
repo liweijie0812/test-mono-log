@@ -3,7 +3,7 @@ name: flow-pilot
 on:
   pull_request:
     branches: [main]
-    types: [opened, edited]
+    types: [opened,synchronize, edited,closed]
   issue_comment:
     types: [edited]  
 
