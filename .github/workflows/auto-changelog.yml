@@ -1,14 +1,14 @@
-name: flow-pilot
+name: Auto_Changelog
 
 on:
   pull_request:
     branches: [main]
-    types: [opened,synchronize, edited,closed]
+    types: [opened, edited]
   issue_comment:
     types: [edited]  
 
 jobs:
-  flow:
+  changelog:
     runs-on: ubuntu-latest
     steps:
       - uses: TDesignOteam/flow-pilot-action@develop
