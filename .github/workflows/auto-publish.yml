@@ -2,7 +2,7 @@ name: Auto_Publish
 
 on:
   pull_request_target:
-    types: [close]
+    types: [closed]
 
 jobs:
   publish:
