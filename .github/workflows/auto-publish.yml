@@ -2,8 +2,8 @@ name: Auto_Publish
 
 on:
   pull_request_target:
-    branches: [main]
     types: [close]
+
 jobs:
   publish:
     if: github.event.pull_request.merged && startsWith(github.head_ref, 'release/')
