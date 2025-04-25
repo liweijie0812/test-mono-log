@@ -1,3 +1,8 @@
+## 🌈 1.1.0 `2025-4-25` 
+### 🐞 Bug Fixes
+- Utils: `isString` function @liweijie0812 ([#22](https://github.com/liweijie0812/test-mono-log/pull/22))
+
+
 ## 🌈 1.0.4 `2025-4-25` 
 ### 🚀 Features
 - Button: cpdd @liweijie0812 ([#18](https://github.com/liweijie0812/test-mono-log/pull/18))
