@@ -2,7 +2,7 @@ name: Auto_Changelog
 
 on:
   pull_request:
-    branches: [main]
+    branches: [develop]
     types: [opened, edited]
   issue_comment:
     types: [edited]  
