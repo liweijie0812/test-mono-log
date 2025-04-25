@@ -1,0 +1,47 @@
+name: Auto_Tag
+
+on: create
+
+jobs:
+  merge_develop_to_main:
+    if: github.event.ref_type == 'tag'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          token: ${{ secrets.PERSONAL_TOKEN }}
+
+      - name: update official website
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git status
+          git fetch origin
+          git merge origin/develop
+          git push origin main
+    
+  pnpm-publish-pkg-a:
+      if: github.event.ref_type == 'tag' && startsWith(github.event.ref,'pkg-a')
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v4 
+
+        - uses: pnpm/action-setup@v4
+
+        - run: |
+            cd packages/pkg-a
+            pnpm publish --no-git-checks --dry-run
+
+  pnpm-publish-pkg-c:
+      if: github.event.ref_type == 'tag' && startsWith(github.event.ref,'pkg-c')
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v4 
+
+        - uses: pnpm/action-setup@v4
+
+        - run: |
+            cd packages/pkg-c
+            pnpm publish --no-git-checks --dry-run         
