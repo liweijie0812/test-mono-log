@@ -1,26 +1,52 @@
 name: Auto_Publish
 
-on:
-  pull_request_target:
-    types: [closed]
+on: 
+  release:
+    types: [created]
 
 jobs:
-  publish:
-    if: github.event.pull_request.merged && startsWith(github.head_ref, 'release/')
+  merge_develop_to_main:
     runs-on: ubuntu-latest
     steps:
+      - name: Print github.event.release
+        run: |
+          echo "Release event: ${{ toJson(github.event.release) }}"
+          
       - uses: actions/checkout@v4
         with:
-          submodules: recursive
-
-      - uses: pnpm/action-setup@v4
-
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 18    
-
-      - uses: TDesignOteam/flow-pilot-action@develop
-        with:
+          ref: main
+          fetch-depth: 0
           token: ${{ secrets.PERSONAL_TOKEN }}
-          packages: "pkg-a,pkg-b,pkg-c"
 
+      - name: update official website
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git status
+          git fetch origin
+          git merge origin/develop
+          git push origin main
+    
+  pnpm-publish-pkg-a:
+      if: startsWith(github.event.release.tag_name,'pkg-a')
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v4 
+
+        - uses: pnpm/action-setup@v4
+
+        - run: |
+            cd packages/pkg-a
+            pnpm publish --no-git-checks --dry-run
+
+  pnpm-publish-pkg-c:
+      if: startsWith(github.event.release.tag_name,'pkg-c')
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v4 
+
+        - uses: pnpm/action-setup@v4
+
+        - run: |
+            cd packages/pkg-c
+            pnpm publish --no-git-checks --dry-run         
