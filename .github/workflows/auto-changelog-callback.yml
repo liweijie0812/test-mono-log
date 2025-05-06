@@ -40,7 +40,7 @@ jobs:
         if: steps.changelog.outputs.changelog
         uses: actions-cool/maintain-one-comment@v3
         with:
-          token: ${{ secrets.TDESIGN_BOT_TOKEN }}
+          token: ${{ secrets.PERSONAL_TOKEN }}
           number: ${{steps.pr.outputs.id}}
           body: ${{ steps.changelog.outputs.changelog }}
           body-include: "<!-- FLOW-PR-CHANGELOG -->"
