@@ -33,7 +33,7 @@ jobs:
       - name: Set pr changelog
         id: changelog
         run: |
-          changelog=$(cat changelog.md | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
+          changelog=$(cat changelog.md)
           echo "changelog=$changelog" >> $GITHUB_OUTPUT
 
       - name: comment
