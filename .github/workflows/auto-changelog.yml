@@ -19,7 +19,7 @@ jobs:
         id: changelog
         with:
           token: ${{ secrets.PERSONAL_TOKEN }}
-          packages: 'tdesign-vue-next,@tdesign-vue-next/chat'
+          packages: 'pkg-a,pkg-b,pkg-c'
       
       - run: echo ${{ steps.changelog.outputs.changelog}} > changelog.md
       
@@ -45,4 +45,4 @@ jobs:
         uses: TDesignOteam/flow-pilot-action@develop
         with:
           token: ${{ secrets.PERSONAL_TOKEN }}
-          packages: 'tdesign-vue-next,@tdesign-vue-next/chat'
+          packages: 'pkg-a,pkg-b,pkg-c'
