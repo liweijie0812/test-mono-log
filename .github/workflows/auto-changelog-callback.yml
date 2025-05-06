@@ -32,15 +32,18 @@ jobs:
 
       - name: Set pr changelog
         id: changelog
-        run: |
-          changelog=$(cat changelog.md)
-          echo "changelog=$changelog" >> $GITHUB_OUTPUT
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const changelog = fs.readFileSync('changelog.md', 'utf8');
+            core.outputs('comment',changelog.trim())
 
       - name: comment
-        if: steps.changelog.outputs.changelog
+        if: steps.changelog.outputs.comment
         uses: actions-cool/maintain-one-comment@v3
         with:
           token: ${{ secrets.PERSONAL_TOKEN }}
           number: ${{steps.pr.outputs.id}}
-          body: ${{ steps.changelog.outputs.changelog }}
+          body: ${{ steps.changelog.outputs.comment }}
           body-include: "<!-- FLOW-PR-CHANGELOG -->"
