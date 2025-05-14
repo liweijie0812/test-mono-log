@@ -3,39 +3,25 @@ name: auto-changelog
 on:
   pull_request:
     branches: [develop]
-    types: [opened, edited]
+    types: [edited]
+  pull_request_review:
+    types: [submitted]  
 
   issue_comment:
     types: [edited]
 
 jobs:
   changelog:
-    if: ${{ github.event.pull_request}}
+    if: ${{ github.event.pull_request || github.event.review.state == 'approved' }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      
-      - uses: TDesignOteam/flow-pilot-action@develop
-        id: changelog
-        with:
-          token: ${{ secrets.PERSONAL_TOKEN }}
-          packages: 'pkg-a,pkg-b,pkg-c'
-      
-      - run: echo "${{ steps.changelog.outputs.changelog }}" > changelog.md
-      
-      - uses: actions/upload-artifact@v4
-        with:
-          name: changelog
-          path: changelog.md
-          retention-days: 5
-
-      - run: echo ${{ github.event.number }} > pr-id.txt
+      - run: echo ${{ github.event.pull_request.number }} > pr-id.txt
 
       - uses: actions/upload-artifact@v4
         with:
           name: pr-id
           path: pr-id.txt
-          retention-days: 5    
+          retention-days: 5 
 
   commit-changelog:
     if: github.event.issue.pull_request
