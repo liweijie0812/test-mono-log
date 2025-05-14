@@ -9,7 +9,7 @@ on:
 
 jobs:
   comment:
-    if: ${{ github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.event == 'pull_request' }}
+    if: ${{ github.event.workflow_run.conclusion == 'success'}}
     runs-on: ubuntu-latest
     steps:
       - uses: TDesignOteam/flow-pilot-action@develop
