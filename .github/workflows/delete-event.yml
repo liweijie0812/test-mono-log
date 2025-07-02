@@ -11,7 +11,9 @@ jobs:
       - name: 输出删除信息
         run: |
           echo "检测到分支删除事件！"
-          echo "完整引用路径: ${{ github.ref }}"
-          echo "分支名: ${{ github.ref_name }}"
-          echo "删除者: ${{ github.actor }}"
+          echo "github.ref: ${{ github.ref }}"
+          echo "github.ref_name: ${{ github.ref_name }}"
+          echo "github.event.ref: ${{ github.event.ref }}"
+          echo "github.event.deleted_sha: ${{ github.event.deleted_sha }}"
+          echo "github.event.ref_type: ${{ github.event.ref_type }}"
         shell: bash
