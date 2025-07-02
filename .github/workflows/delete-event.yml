@@ -1,0 +1,13 @@
+name: On Branch Delete
+on:
+  delete:
+    branches:
+      - 'feature/*'  # 匹配删除以 feature/ 开头的分支
+jobs:
+  notify-deletion:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 发送删除通知
+        run: |
+          echo "分支 ${{ github.ref }} 已被删除"
+          # 可调用 API 发送通知到 Slack、Teams 等
