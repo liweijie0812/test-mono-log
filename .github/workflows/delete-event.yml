@@ -1,15 +1,17 @@
-name: On Branch Delete
+name: 分支删除通知
 on:
   delete:
+    branches:
+      - '**'  # 监听所有分支删除
+
 jobs:
-  notify-deletion:
+  notify:
     runs-on: ubuntu-latest
     steps:
-      - name: 发送删除通知
+      - name: 输出删除信息
         run: |
-          echo "分支 ${{ github.ref }} 已被删除"
-          # 可调用 API 发送通知到 Slack、Teams 等
-      - name: 发送 Slack 通知（可选）
-        if: github.ref == 'refs/heads/develop'  # 仅对 develop 分支删除生效
-        run: |
-         echo "分支 ${{ github.ref_name }} 已被删除"
+          echo "检测到分支删除事件！"
+          echo "完整引用路径: ${{ github.ref }}"
+          echo "分支名: ${{ github.ref_name }}"
+          echo "删除者: ${{ github.actor }}"
+        shell: bash
