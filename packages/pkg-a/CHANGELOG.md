@@ -1,3 +1,12 @@
+## 🌈 1.1.1 `2025-07-20` 
+
+### 🚀 Features
+- `Aaa`: 处理问题或特性描述 @liweijie0812 ([#28](https://github.com/liweijie0812/test-mono-log/pull/28))
+- `Dfasd`: 
+  - 处理问题或特性描述 @liweijie0812 ([#28](https://github.com/liweijie0812/test-mono-log/pull/28))
+  - 处理问题或特性描述 @liweijie0812 ([#27](https://github.com/liweijie0812/test-mono-log/pull/27))
+
+
 ## 🌈 1.1.0 `2025-4-25` 
 ### 🐞 Bug Fixes
 - Utils: `isString` function @liweijie0812 ([#22](https://github.com/liweijie0812/test-mono-log/pull/22))
