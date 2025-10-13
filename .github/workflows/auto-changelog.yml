@@ -32,6 +32,8 @@ jobs:
         with:
           token: ${{ secrets.PERSONAL_TOKEN }}
           packages: 'pkg-a,pkg-b,pkg-c'
+          tmt-secret-id: ${{ secrets.TENCENTCLOUD_SECRET_ID }}
+          tmt-secret-key: ${{ secrets.TENCENTCLOUD_SECRET_KEY }}
 
   commit-changelog:
     if: github.event.issue.pull_request
