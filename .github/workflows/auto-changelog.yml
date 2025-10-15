@@ -28,7 +28,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: auto-changelog
-        uses: TDesignOteam/flow-pilot-action@tmt
+        uses: TDesignOteam/flow-pilot-action@develop
         with:
           token: ${{ secrets.PERSONAL_TOKEN }}
           packages: 'pkg-a,pkg-b,pkg-c'
@@ -40,7 +40,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: auto-changelog
-        uses: TDesignOteam/flow-pilot-action@tmt
+        uses: TDesignOteam/flow-pilot-action@develop
         with:
           token: ${{ secrets.PERSONAL_TOKEN }}
           packages: 'pkg-a,pkg-b,pkg-c'
