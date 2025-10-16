@@ -4,6 +4,12 @@
 - `Q`: Handling problems or feature descriptions@liweijie0812 ([#38](https://github.com/liweijie0812/test-mono-log/pull/38))
 
 
+## 🌈 1.1.3 `2025-10-16` 
+
+### 🚀 Features
+- `Q`: Handling problems or feature descriptions@liweijie0812 ([#38](https://github.com/liweijie0812/test-mono-log/pull/38))
+
+
 ## 🌈 1.1.2 `2025-10-13` 
 
 ### 🚀 Features
