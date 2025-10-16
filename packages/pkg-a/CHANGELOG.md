@@ -1,3 +1,14 @@
+## 🌈 1.1.2 `2025-10-13` 
+
+### 🚀 Features
+- `Button`: 
+  - 新组件  @liweijie0812 ([#34](https://github.com/liweijie0812/test-mono-log/pull/34))
+  - 修复事件无效 @liweijie0812 ([#34](https://github.com/liweijie0812/test-mono-log/pull/34))
+
+### 🚧 Others
+- `Utils`: 新增 `isString` 方法 @liweijie0812 ([#34](https://github.com/liweijie0812/test-mono-log/pull/34))
+
+
 ## 🌈 1.1.1 `2025-07-20` 
 
 ### 🚀 Features
