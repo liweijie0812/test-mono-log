@@ -10,7 +10,7 @@ jobs:
     if: github.event.label.name == 'help wanted'
     steps:
       - name: Add comment
-        uses: DesignOteam/workflows/actions/maintain-one-comment@issues-helper
+        uses: TDesignOteam/workflows/actions/issues-helper@issues-helper
         with:
           actions: "create-comment"
           token: ${{ secrets.GITHUB_TOKEN }}

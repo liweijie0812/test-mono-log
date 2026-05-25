@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: mark-duplicate
-        uses: TDesignOteam/workflows/actions/maintain-one-comment@issues-helper
+        uses: TDesignOteam/workflows/actions/issues-helper@issues-helper
         with:
           actions: "mark-duplicate"
           token: ${{ secrets.GITHUB_TOKEN }}

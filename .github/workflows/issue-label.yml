@@ -41,7 +41,7 @@ jobs:
             duration: ${{ steps.token.outputs.duration }}
             deadline: ${{ steps.token.outputs.deadline }}
       - name: Update issue
-        uses: TDesignOteam/workflows/actions/maintain-one-comment@issues-helper
+        uses: TDesignOteam/workflows/actions/issues-helper@issues-helper
         with:
           actions: "update-issue"
           token: ${{ secrets.GITHUB_TOKEN }}
