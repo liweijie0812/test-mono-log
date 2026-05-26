@@ -7,10 +7,8 @@ on:
 
 jobs:
   call-issue-welcome:
-    runs-on: ubuntu-latest
-    steps:
-      - name: call-issue-welcome
-        uses: TDesignOteam/workflows/.github/workflows/reusable-issue-welcome@reusable-issue
-        with:
-          issue-number: ${{ github.event.issue.number }}
-          login: ${{ github.event.issue.user.login }}
+    run:
+    uses: TDesignOteam/workflows/.github/workflows/reusable-issue-welcome@reusable-issue
+    with:
+      issue-number: ${{ github.event.issue.number }}
+      login: ${{ github.event.issue.user.login }}
