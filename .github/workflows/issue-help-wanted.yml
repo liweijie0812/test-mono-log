@@ -7,4 +7,4 @@ on:
 
 jobs:
   call-issue-help-wanted:
-    uses: TDesignOteam/workflows/.github/workflows/reusable-issue-help-wantedyml@reusable-issue
+    uses: TDesignOteam/workflows/.github/workflows/reusable-issue-help-wanted.yml@reusable-issue
