@@ -8,7 +8,8 @@ on:
 jobs:
   call-issue-welcome:
     uses: TDesignOteam/workflows/.github/workflows/reusable-issue-welcome.yml@reusable-issue
+    secrets:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     with:
       issue-number: ${{ github.event.issue.number }}
       login: ${{ github.event.issue.user.login }}
-      token: ${{ secrets.GITHUB_TOKEN }}
