@@ -8,5 +8,5 @@ jobs:
     steps:
       - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
         with:
-          token: ${{ secrets.test_token }}
+          token: ${{ secrets.test_token1 }}
           fetch-depth: 0
