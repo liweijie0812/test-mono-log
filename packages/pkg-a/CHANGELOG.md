@@ -1,3 +1,9 @@
+## 🌈 1.1.4 `2026-07-10`
+
+### 🚀 Features
+
+- `Button`: 新组件 @liweijie0812 ([#34](https://github.com/liweijie0812/test-mono-log/pull/34))
+
 ## 🌈 1.1.3 `2025-10-16`
 
 ### 🚀 Features
