@@ -20,4 +20,8 @@ jobs:
       - uses: TDesignOteam/flow-pilot-action@develop
         with:
           token: ${{ secrets.PERSONAL_TOKEN }}
-          packages: "pkg-a,pkg-b,pkg-c,pkg_d"
+          packages: |
+            pkg-a
+            pkg-b
+            pkg-c
+            pkg_d
