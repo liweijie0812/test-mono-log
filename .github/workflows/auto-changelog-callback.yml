@@ -27,5 +27,5 @@ jobs:
         uses: TDesignOteam/flow-pilot-action@develop
         with:
           token: ${{ secrets.PERSONAL_TOKEN }}
-          packages: 'pkg-a,pkg-b,pkg-c'
+          packages: 'pkg-a,pkg-b,pkg-c,pkg_d'
           pr_number: ${{ steps.pr.outputs.id }}

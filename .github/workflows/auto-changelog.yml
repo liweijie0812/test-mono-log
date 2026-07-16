@@ -31,7 +31,7 @@ jobs:
         uses: TDesignOteam/flow-pilot-action@develop
         with:
           token: ${{ secrets.PERSONAL_TOKEN }}
-          packages: "pkg-a,pkg-b,pkg-c"
+          packages: "pkg-a,pkg-b,pkg-c,pkg_d"
 
   commit-changelog:
     if: github.event.issue.pull_request
@@ -41,4 +41,4 @@ jobs:
         uses: TDesignOteam/flow-pilot-action@develop
         with:
           token: ${{ secrets.PERSONAL_TOKEN }}
-          packages: "pkg-a,pkg-b,pkg-c"
+          packages: "pkg-a,pkg-b,pkg-c,pkg_d"
